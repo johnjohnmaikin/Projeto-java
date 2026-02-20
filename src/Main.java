@@ -11,7 +11,8 @@ public class Main {
         do {
             System.out.println("=======================MENU==================");
             System.out.println("Digite o valor desejado");
-            System.out.println("1-Cadastrar \n" + "2-Consultar \n");
+            System.out.println("1-Cadastrar \n" + "2-Consultar \n" + "3-Consultar Usuário \n" +
+                    "4-Deletar Usuário \n" + "5-Deletar Todos Usuários" + "0-Sair do MENU \n");
             escola = entrada.nextInt();
             entrada.nextLine();
             try {
@@ -26,6 +27,8 @@ public class Main {
                     break;
 
                     case 4: deletar(entrada,service);
+                    break;
+                    case 5: deletarTodos(entrada, service);
                     break;
                     case 0: {
                         System.out.println("saindo do menu");
@@ -67,5 +70,10 @@ public class Main {
         long id = entrada.nextInt();
         Usuario u = service.deletarPorId(id);
         System.out.println("deletado");
+    }
+    private static void deletarTodos(Scanner entrada , UsuarioService service){
+        System.out.println("tem certeza de que deseja limpar a lista? s/n");
+        String resp = entrada.nextLine();
+        if(resp.equals("s")){service.deletarTodos();}
     }
 }
