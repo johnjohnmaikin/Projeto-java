@@ -46,5 +46,9 @@ public class UsuarioService {
         if(nome.isBlank() || nome == null){
             throw new IllegalArgumentException("Nome ficou em branco!");
         }
+        if(nome.length()<3){throw new IllegalArgumentException("nome não pode ser pequeno");}
+
+        if(!nome.matches("^[\\p{L}]+( [\\p{L}]+)*$")){ throw new IllegalArgumentException("nome contém número ou espaços indesejado");}
+
     }
 }
