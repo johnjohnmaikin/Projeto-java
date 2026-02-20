@@ -29,6 +29,7 @@ public class Main {
                     case 4: deletar(entrada,service);
                     break;
                     case 5: deletarTodos(entrada, service);
+                    break;
                     case 0: {
                         System.out.println("saindo do menu");
                     }
@@ -71,7 +72,7 @@ public class Main {
         System.out.println("deletado");
     }
     private static void deletarTodos(Scanner entrada , UsuarioService service){
-        System.out.println("tem certeza de que deseja limpar a lista?");
+        System.out.println("tem certeza de que deseja limpar a lista? s/n");
         String resp = entrada.nextLine();
         if(resp.equals("s")){service.deletarTodos();}
     }
