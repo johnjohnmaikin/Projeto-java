@@ -36,6 +36,10 @@ public class UsuarioService {
         }
         return repo.deletarPorId(id);
     }
+
+    public void deletarTodos(){
+        repo.deletarTodos();
+    }
     //=================================validadores=====================================
 
     public void validaNome(String nome){

@@ -29,4 +29,8 @@ public class UsuarioRepository {//classe para ralizar os CRUDs
        usuarios.remove(u);
        return u;
     }
+
+    public void deletarTodos(){
+        usuarios.clear();
+    }
 }
